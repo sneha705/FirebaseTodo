@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-icon size="large" slot="start" name="arrow-back" routerLink="/home"></ion-icon> 
+    <ion-title>ViewProfile</ion-title>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row>
+      <ion-col class="center">
+          <ion-avatar>
+              <ion-img [src]="logo"></ion-img>
+          </ion-avatar>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col class="col-border">
+            <ion-label class="center">User Details</ion-label>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="detail-padding">
+      <ion-col size="4" >
+        <ion-label>User Id :</ion-label>
+      </ion-col>
+      <ion-col size="8">
+          {{userId}}
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label>Email :</ion-label>
+      </ion-col>
+      <ion-col size="8">
+          {{email}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<ion-button class="center" (click)="viewProfile()">View</ion-button>
+
+</ion-content>
+<ion-footer>
+    <ion-toolbar color="primary">
+        <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>

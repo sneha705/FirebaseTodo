@@ -1,0 +1,193 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>PROFILE</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-list>
+          <ion-list-header>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                    <ion-avatar>
+                        <ion-img [src]="logo"></ion-img>
+                    </ion-avatar>
+                </ion-col>
+                <ion-col size="8" class="name">
+                    Laxhita
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+              
+                
+          </ion-list-header>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item button>
+              <ion-icon slot="start" name='home' routerLink='/home'></ion-icon>
+              <ion-label >
+                Home
+              </ion-label>
+            </ion-item>
+            <ion-item button routerLink='/view-profile'>
+                <ion-icon slot="start" name="settings"></ion-icon>
+              <ion-label>
+                View Profile
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <div class="ion-page" main>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-menu-toggle>
+            <ion-button>
+              <ion-icon slot="icon-only" name="menu"></ion-icon>
+            </ion-button>
+          </ion-menu-toggle>
+        </ion-buttons>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="10">
+                      <ion-title class="item-note" item-end>
+                      TodoList App
+                  </ion-title>
+                </ion-col>
+                <ion-col size="2">
+                    <ion-button (click)="logout()" color="danger" size="small"><ion-icon name="log-out"></ion-icon></ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+      </ion-toolbar>
+    </ion-header> 
+      <ion-content class="ion-padding">
+       
+        <ion-app>
+          
+          <ion-content padding>
+            <ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="10">
+                      <ion-input type="text" placeholder="Enter task" [(ngModel)]="taskName" #taskInput></ion-input>
+                  </ion-col>
+                  <ion-col size="2">
+                      <ion-button (click)="addTask()"><ion-icon name="add"></ion-icon></ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+            <div>
+             
+                <ion-item *ngFor="let task of taskList; let i=index">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="8">
+                          {{task}}
+                      </ion-col>
+                      <ion-col size="2">
+                          <ion-button color="success" (click)="updateTask(i)"><ion-icon name="create"></ion-icon></ion-button> 
+                      </ion-col>
+                      <ion-col>
+                          <ion-button color="danger" (click)="deleteTask(i)"><ion-icon name="trash"></ion-icon></ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>  
+            </div>
+          </ion-content>
+          
+        </ion-app>
+      </ion-content>
+      <ion-footer>
+        <ion-toolbar color="primary">
+          <ion-title>Footer</ion-title>
+        </ion-toolbar>
+      </ion-footer>
+
+    </div>
+  </ion-split-pane>
+</ion-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10">
+              <ion-title class="item-note" item-end>
+              <ion-icon name="home"></ion-icon>
+              TodoList App
+          </ion-title>
+        </ion-col>
+        <ion-col size="2">
+            <ion-button (click)="logout()" color="danger" size="small"><ion-icon name="log-out"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10">
+            <ion-input type="text" placeholder="Enter task" [(ngModel)]="taskName" #taskInput></ion-input>
+        </ion-col>
+        <ion-col size="2">
+            <ion-button (click)="addTask()"><ion-icon name="add"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <div>
+   
+      <ion-item *ngFor="let task of taskList; let i=index">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="8">
+                {{task}}
+            </ion-col>
+            <ion-col size="2">
+                <ion-button color="success" (click)="updateTask(i)"><ion-icon name="create"></ion-icon></ion-button> 
+            </ion-col>
+            <ion-col>
+                <ion-button color="danger" (click)="deleteTask(i)"><ion-icon name="trash"></ion-icon></ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>  
+  </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar color="primary">
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer> -->

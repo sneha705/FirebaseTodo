@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form  [formGroup]="loginForm" (submit)="loginUser()">
+    <ion-grid>
+      <ion-row>
+          <ion-col size="1">
+              <ion-icon name="contact" size="large"></ion-icon>
+          </ion-col>
+          <ion-col size="11">
+              <ion-item class="item-note" item-end>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input formControlName="email" type="email"></ion-input>
+              </ion-item> 
+              <ion-item lines="none" class="error-message" *ngIf='!loginForm.controls.email.valid && loginForm.controls.email.dirty'>
+                  <ion-text color="medium">Please enter correct email</ion-text>
+              </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="1">
+                <ion-icon name="lock" size="large"></ion-icon>
+            </ion-col>
+            <ion-col size="11">
+                <ion-item class="item-note" item-end>
+                  <ion-label position="floating">Password</ion-label>
+                  <ion-input formControlName="password" type="password"></ion-input>
+                </ion-item>
+                <ion-item lines="none" class="error-message"  *ngIf='!loginForm.controls.password.valid && loginForm.controls.password.dirty' no-lines>
+                    <ion-text color="medium">Please enter your password of at least 6 character</ion-text>
+                  </ion-item> 
+            </ion-col>
+          </ion-row>
+  </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col style="text-align: center">
+            <ion-button type="submit" expand="block" color="danger">Login</ion-button>
+          </ion-col>
+          <ion-col>
+              <ion-button color="success" expand="block"(click)="createAccount()">
+                  Sign Up
+                </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </form> 
+  <div class="restpwd">
+    <ion-text color="primary" expand="block"  (click)="resetPwd()">
+        I forgot my password ?
+    </ion-text>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+

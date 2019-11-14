@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>resetPwd</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]='resetPwdForm' (submit)='resetUserPwd()'>
+        <ion-item>
+            <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!resetPwdForm.controls.email.valid  && resetPwdForm.controls.email.dirty">
+            <p>Please enter a valid email.</p>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col style="text-align: center">
+                <ion-button center-all type="submit" color="danger" [disabled]="!resetPwdForm.valid">Reset Password</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </form>
+</ion-content>

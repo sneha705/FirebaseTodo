@@ -1,0 +1,140 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+      <form [formGroup]="signupForm" (submit)="signUpUser()">
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="1">
+                      <ion-icon name="contact" size="large"></ion-icon>
+                  </ion-col>
+                  <ion-col size="11">
+                      <ion-item class="item-note" item-end>
+                          <ion-label position="floating">First Name</ion-label>
+                          <ion-input formControlName="firstName" type="text"></ion-input>
+                        </ion-item> 
+                        <ion-item lines="none" class="error-message" *ngIf='!signupForm.controls.firstName.valid && signupForm.controls.firstName.dirty'>
+                            <ion-text color="medium">Please enter your first name containing only alphabets</ion-text>
+                        </ion-item>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="1">
+                        <ion-icon name="contact" size="large"></ion-icon>
+                    </ion-col>
+                    <ion-col size="11">
+                        <ion-item class="item-note" item-end>
+                            <ion-label position="floating">Last Name</ion-label>
+                            <ion-input formControlName="lastName" type="text"></ion-input>
+                          </ion-item> 
+                          <ion-item lines="none" class="error-message" *ngIf='!signupForm.controls.lastName.valid && signupForm.controls.lastName.dirty'>
+                              <ion-text color="medium">Please enter your last name containing only alphabets</ion-text>
+                          </ion-item>
+                    </ion-col>
+                  </ion-row>
+
+
+                  <ion-row>
+                      <ion-col size="1">
+                          <ion-icon name="mail" size="large"></ion-icon>
+                      </ion-col>
+                      <ion-col size="11">
+                          <ion-item class="item-note" item-end>
+                              <ion-label position="floating">Email</ion-label>
+                              <ion-input formControlName="email" type="text"></ion-input>
+                            </ion-item> 
+                            <ion-item lines="none" class="error-message" *ngIf='!signupForm.controls.email.valid && signupForm.controls.email.dirty'>
+                                <ion-text color="medium">Please enter your email</ion-text>
+                            </ion-item>
+                      </ion-col>
+                    </ion-row>
+
+
+                    <ion-row>
+                        <ion-col size="1">
+                            <ion-icon name="lock" size="large"></ion-icon>
+                        </ion-col>
+                        <ion-col size="11">
+                            <ion-item class="item-note" item-end>
+                                <ion-label position="floating">Password</ion-label>
+                                <ion-input formControlName="password" type="password"></ion-input>
+                              </ion-item> 
+                              <ion-item lines="none" class="error-message" *ngIf='!signupForm.controls.password.valid && signupForm.controls.password.dirty'>
+                                  <ion-text color="medium">Please enter your password of at least 6 character</ion-text>
+                              </ion-item>
+                        </ion-col>
+                      </ion-row>
+
+
+                      <ion-row>
+                          <ion-col size="1">
+                              <ion-icon name="checkbox" size="large"></ion-icon>
+                          </ion-col>
+                          <ion-col size="11">
+                              <ion-item class="item-note" item-end>
+                                  <ion-label position="floating">Confirm Password</ion-label>
+                                  <ion-input formControlName="retype" type="password"></ion-input>
+                                </ion-item> 
+                                <ion-item lines="none" class="error-message" *ngIf='!signupForm.controls.retype.valid && signupForm.controls.retype.dirty'>
+                                    <ion-text color="medium">Please confirm your password</ion-text>
+                                </ion-item>
+                          </ion-col>
+                        </ion-row>
+              </ion-grid>
+              <!-- <ion-item>
+                <ion-input formControlName="firstName" type="text" placeholder="First Name"></ion-input>
+              </ion-item>
+              <ion-item no-lines class="error-message"  colour="light" *ngIf='!signupForm.controls.firstName.valid && signupForm.controls.firstName.dirty'>
+                  <p>Please enter your name containing only alphabets</p>
+              </ion-item>
+              <ion-item>
+                <ion-input formControlName="lastName" type="text" placeholder="Last Name"></ion-input>
+              </ion-item>  
+              <ion-item  color="danger" sclass="error-message" *ngIf="!signupForm.controls.lastName.valid && signupForm.controls.lastName.dirty">
+                <p>Please enter your last name containing only alphabets</p>
+              </ion-item>
+              <ion-item>
+                <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+              </ion-item> 
+              <ion-item  color="danger" class="error-message" *ngIf='!signupForm.controls.email.valid && signupForm.controls.email.dirty'>
+                  <p>Please enter correct email</p>
+              </ion-item>
+              <ion-item>
+                <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+              </ion-item>
+              <ion-item color="danger" class="error-message" maxlength="8" *ngIf='!signupForm.controls.password.valid && signupForm.controls.password.dirty'>
+                <p>please enter your password of at least 6 character</p>
+              </ion-item>
+              <ion-item>
+                <ion-input formControlName="retype" maxlength="8" type="password" placeholder="Confirm Password"></ion-input>
+              </ion-item>
+              <ion-item color="danger" class="error-message" *ngIf='!signupForm.controls.retype.valid && signupForm.controls.retype.dirty'>
+                <p>Please confirm your password</p>
+              </ion-item> -->
+
+              <ion-grid>
+                  <ion-row>
+                    <ion-col style="text-align: center">
+                        <ion-button type="submit" [disabled]="!signupForm.valid">Create an Account</ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button color="danger" expand="block" routerLink='/login'>
+                            Login
+                          </ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+
+  </form>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+  </ion-footer>
